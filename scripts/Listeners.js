@@ -3,7 +3,7 @@
 //eslint-disable-next-line no-unused-vars
 const Listeners = (() => {
   const render = () => {
-    $('.results').html(Results.videos.map(video => Results.generateVideoItemHtml(video)));
+    $('.results').html(Results.resVideos.videos.map(video => Results.generateVideoItemHtml(video)));
   };
   const handleFormSubmit = () => {
     $('form').submit(event => {
@@ -12,7 +12,7 @@ const Listeners = (() => {
       $('#search-term').val('');
       Responses.fetchVideos(searchTerm, data => {
         Results.addVideosToStore(Results.decorateResponse(data));
-        this.render();
+        render();
       });
     });
   };

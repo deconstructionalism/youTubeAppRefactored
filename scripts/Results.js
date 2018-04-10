@@ -1,7 +1,9 @@
 'use strict';
 //eslint-disable-next-line no-unused-vars
 const Results = (() => {
-  const videos = [];
+  const resVideos = {
+    videos: []
+  };
   const decorateResponse = response => {
     return response.items.map(item => {
       const id = item.id.videoId;
@@ -9,6 +11,9 @@ const Results = (() => {
       const thumbnail = item.snippet.thumbnails.default.url;
       return {id, title, thumbnail};
     });
+  };
+  const addVideosToStore = videos => {
+    resVideos.videos = videos;
   };
   const generateVideoItemHtml = video => {
     return `
@@ -18,10 +23,7 @@ const Results = (() => {
       </li>
     `;
   };
-  const addVideosToStore = videos => {
-    this.videos = videos;
-  };
   return {
-    videos, decorateResponse, generateVideoItemHtml, addVideosToStore
+    resVideos, decorateResponse, generateVideoItemHtml, addVideosToStore
   };
 })();
