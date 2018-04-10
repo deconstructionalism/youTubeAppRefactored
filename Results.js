@@ -1,5 +1,5 @@
 'use strict';
-const Store = (() => {
+const Results = (() => {
   const videos = [];
   const decorateResponse = response => {
     return response.items.map(item => {
@@ -17,7 +17,7 @@ const Store = (() => {
       </li>
     `;
   };
-  const addVideosToStore = (videos) => {
+  const addVideosToStore = videos => {
     this.videos = videos;
   };
   return {
