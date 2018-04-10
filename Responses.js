@@ -12,4 +12,7 @@ const Responses = (() => {
     };
     $.getJSON(BASE_URL, query, fn);
   };
+  return {
+    API_KEY, BASE_URL, fetchVideos
+  };
 })();
