@@ -17,7 +17,10 @@ const Store = (() => {
       </li>
     `;
   };
+  const addVideosToStore = (videos) => {
+    this.videos = videos;
+  };
   return {
-    videos, decorateResponse, generateVideoItemHtml
+    videos, decorateResponse, generateVideoItemHtml, addVideosToStore
   };
 })();
