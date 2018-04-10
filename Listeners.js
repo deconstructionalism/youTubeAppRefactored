@@ -1,5 +1,6 @@
 'use strict';
 /* global Results, Responses */
+//eslint-disable-next-line no-unused-vars
 const Listeners = (() => {
   const render = () => {
     $('.results').html(Results.videos.map(video => Results.generateVideoItemHtml(video)));
