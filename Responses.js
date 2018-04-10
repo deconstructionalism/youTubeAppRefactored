@@ -1,6 +1,7 @@
 'use strict';
 // Create a namespace for all constants and methods
 // related to getting a response from an API.
+//eslint-disable-next-line no-unused-vars
 const Responses = (() => {
   const API_KEY = 'AIzaSyBFz0lxQL-8arxYWSUs8rmCQSLM6jqAwrI';
   const BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
