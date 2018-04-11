@@ -9,8 +9,10 @@ const Responses = (() => {
       key: API_KEY,
       part: 'snippet'
     };
-    $.getJSON(BASE_URL, query, fn);
-  };
+    axios.get(BASE_URL, {
+      params: query})
+      .then(response => fn(response.data))
+  }
   return {
     API_KEY, BASE_URL, fetchVideos
   };

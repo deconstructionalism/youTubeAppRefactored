@@ -3,18 +3,20 @@
 //eslint-disable-next-line no-unused-vars
 const Listeners = (() => {
   const render = () => {
-    $('.results').html(Results.resVideos.videos.map(video => Results.generateVideoItemHtml(video)));
+    document.querySelector('.results').innerHTML = Results.resVideos.videos.map(video => Results.generateVideoItemHtml(video));
   };
   const handleFormSubmit = () => {
-    $('form').submit(event => {
+    document.querySelector('form').addEventListener('submit', event => {
       event.preventDefault();
-      const searchTerm = $('#search-term').val();
-      $('#search-term').val('');
+      const searchInput = document.querySelector('#search-term')
+      const searchTerm = searchInput.value;
+      searchInput.value = '';
       Responses.fetchVideos(searchTerm, data => {
         Results.addVideosToStore(Results.decorateResponse(data));
         render();
       });
     });
+
   };
   return {
     render, handleFormSubmit
